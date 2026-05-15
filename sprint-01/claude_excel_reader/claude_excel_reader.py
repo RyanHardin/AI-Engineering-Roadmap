@@ -11,7 +11,7 @@ def read_csv(file_path):
 
 
 def main():
-    raw_csv = read_csv("./customer_interviews.csv")
+    raw_csv = read_csv("../inputs/customer_interviews.csv")
     client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
     message = client.messages.create(

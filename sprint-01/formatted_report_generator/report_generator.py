@@ -14,7 +14,7 @@ def read_csv(file_path):
 def generate_report():
     filename = "customer_interviews.csv"
     header = f"Date: {date.today()} \nFile: {filename}\n"
-    raw_csv = read_csv(f"./{filename}")
+    raw_csv = read_csv(f"../inputs/{filename}")
 
     client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
