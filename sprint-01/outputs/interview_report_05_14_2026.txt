@@ -1,0 +1,24 @@
+# Customer Interview Insights Report
+
+**Date:** 2026-05-14
+**File:** customer_interviews.csv
+
+---
+
+## Top Themes Identified
+
+1. **Manual reporting is a major time sink** — Multiple respondents (John Martinez, Sarah Chen, Chris Williams) cite excessive hours spent writing reports from scratch and on admin work rather than core inspection activities.
+
+2. **Inconsistent report quality and standardization gaps** — Amanda Foster and Sarah Chen highlight that reports vary across inspectors and lack a repeatable structure, hurting professionalism and reliability.
+
+3. **Customer-facing documentation falls short of expectations** — Lisa Rodriguez, Emily White, and Jennifer Lee note that clients consistently request detailed reports, before/after comparisons, and insurance-ready documentation that current workflows cannot deliver.
+
+4. **No system for longitudinal performance tracking** — Mike Thompson points to the absence of tools to monitor panel performance over time, a gap echoed implicitly by demand for before/after comparisons.
+
+5. **Strong willingness to pay** — 6 of 7 interviewed prospects answered "yes" to paying for a solution, with the remaining 2 responding "maybe," signaling validated commercial demand.
+
+---
+
+## What To Do Next
+
+Prioritize building an automated, standardized inspection report generator with before/after visual comparisons and historical tracking, then validate pricing with the six "yes" respondents.
