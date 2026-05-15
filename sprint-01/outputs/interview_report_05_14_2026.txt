@@ -1,24 +1,28 @@
-# Customer Interview Insights Report
+# Customer Interview Analysis Report
 
 **Date:** 2026-05-14
 **File:** customer_interviews.csv
 
 ---
 
-## Top Themes Identified
+## Summary
 
-1. **Manual reporting is a major time sink** — Multiple respondents (John Martinez, Sarah Chen, Chris Williams) cite excessive hours spent writing reports from scratch and on admin work rather than core inspection activities.
-
-2. **Inconsistent report quality and standardization gaps** — Amanda Foster and Sarah Chen highlight that reports vary across inspectors and lack a repeatable structure, hurting professionalism and reliability.
-
-3. **Customer-facing documentation falls short of expectations** — Lisa Rodriguez, Emily White, and Jennifer Lee note that clients consistently request detailed reports, before/after comparisons, and insurance-ready documentation that current workflows cannot deliver.
-
-4. **No system for longitudinal performance tracking** — Mike Thompson points to the absence of tools to monitor panel performance over time, a gap echoed implicitly by demand for before/after comparisons.
-
-5. **Strong willingness to pay** — 6 of 7 interviewed prospects answered "yes" to paying for a solution, with the remaining 2 responding "maybe," signaling validated commercial demand.
+Out of 10 contacts, 4 interviews are completed, 4 are scheduled, and 2 have not been contacted. Of the 8 respondents who provided pain points, 6 are willing to pay, 2 are maybe, and 0 said no.
 
 ---
 
-## What To Do Next
+## Top Themes Identified
 
-Prioritize building an automated, standardized inspection report generator with before/after visual comparisons and historical tracking, then validate pricing with the six "yes" respondents.
+1. **Time-consuming, manual report generation** — Multiple respondents (John Martinez, Sarah Chen, Chris Williams) highlighted that creating inspection reports is a tedious, time-intensive manual process that pulls them away from higher-value fieldwork.
+
+2. **Inconsistent report quality and lack of standardization** — Amanda Foster and Sarah Chen pointed to the problem of reports varying in quality across inspectors and being created from scratch each time, suggesting a need for templates or automated formatting.
+
+3. **Insufficient documentation for client and stakeholder needs** — Lisa Rodriguez and Jennifer Lee noted that customers, insurers, and other stakeholders demand detailed, professional documentation that their current workflows cannot easily produce.
+
+4. **Limited tracking and visual comparison capabilities** — Mike Thompson and Emily White expressed frustration with the inability to track panel performance over time or provide before/after comparisons, indicating a gap in longitudinal data management and visualization.
+
+---
+
+## Recommendation
+
+**What to do next:** Prioritize building a standardized, automated report generation tool with templates, before/after comparison features, and performance tracking — then schedule the remaining 2 uncontacted leads and validate this solution direction with the 4 upcoming scheduled interviews.

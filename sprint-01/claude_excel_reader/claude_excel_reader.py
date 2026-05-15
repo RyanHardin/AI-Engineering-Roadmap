@@ -23,7 +23,7 @@ def main():
                 "content": f"Here is data from customer interviews:\n\n{raw_csv}\n\nPlease identify the top 5 pain point themes. For each theme, provide a short title and a 1-2 sentence description.",
             }
         ],
-        model="claude-opus-4-7",
+        model=os.getenv("ANTHROPIC_API_MODEL"),
     )
 
     print(message.content[0].text)

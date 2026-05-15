@@ -36,7 +36,7 @@ def generate_report():
                     """,
             }
         ],
-        model="claude-opus-4-7",
+        model=os.getenv("ANTHROPIC_API_MODEL"),
     )
 
     return message.content[0].text
