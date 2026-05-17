@@ -17,8 +17,8 @@ ai-engineering/
 
 ## Sprints
 
-| Sprint | Focus | Status |
-|--------|-------|--------|
+| Sprint                             | Focus                                                    | Status         |
+| ---------------------------------- | -------------------------------------------------------- | -------------- |
 | [Sprint 01](./sprint-01/README.md) | Python fundamentals · Prompt engineering · LLM API calls | 🟡 In progress |
 
 ## Stack
@@ -37,8 +37,9 @@ ai-engineering/
 
 ## Progress Log
 
-| Date | Milestone |
-|------|-----------|
-| Apr 26, 2026 | Started Sprint 1 — Python fundamentals |
-| May 6, 2026 | First LLM API call — Claude summarizes interview data |
-| May 9, 2026 | Building 3-script API showcase |
+| Date         | Milestone                                             |
+| ------------ | ----------------------------------------------------- |
+| Apr 26, 2026 | Started Sprint 1 — Python fundamentals                |
+| May 6, 2026  | First LLM API call — Claude summarizes interview data |
+| May 9, 2026  | Building 3-script API showcase                        |
+| May 17, 2026 | Completed 3-script API showcase                       |
