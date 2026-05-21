@@ -55,6 +55,10 @@ def interview_chat(claude_client):
                 print("\nEnding session. Goodbye!")
                 continue
 
+            if user_input.strip() == "":
+                print("Please enter a valid message.")
+                continue
+
             message_history.append(user_message)
             new_message = call_claude(claude_client, message_history)
 
