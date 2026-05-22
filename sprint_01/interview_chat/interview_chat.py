@@ -6,7 +6,9 @@ from anthropic import Anthropic  # client class
 
 load_dotenv()
 
-CSV_FILE_PATH = "../inputs/customer_interviews.csv"
+CSV_FILE_PATH = os.path.join(
+    os.path.dirname(__file__), "../inputs/customer_interviews.csv"
+)
 
 
 def read_csv(file_path):
@@ -24,7 +26,7 @@ def call_claude(claude_client, message_history):
     return response
 
 
-def interview_chat(claude_client):
+def load_interview_data(claude_client):
     raw_csv = read_csv(CSV_FILE_PATH)
     message_history = [
         {
@@ -36,7 +38,7 @@ def interview_chat(claude_client):
         }
     ]
     try:
-        messages = call_claude(claude_client, message_history)
+        response = call_claude(claude_client, message_history)
     except anthropic.AuthenticationError:
         print("Invalid API key")
         return
@@ -47,8 +49,10 @@ def interview_chat(claude_client):
         print(f"API Error {error.status_code}: {error.message}")
         return
 
-    print(f"\n{messages.content[0].text}")
+    return response, message_history
 
+
+def run_chat_loop(claude_client, message_history):
     while True:
         user_input = input("\nEnter your response (or 'quit' to exit): ")
 
@@ -81,6 +85,18 @@ def interview_chat(claude_client):
         message_history.append(assistant_message)
 
         print(f"\n{assistant_message['content']}")
+
+
+def interview_chat(claude_client):
+    result = load_interview_data(claude_client)
+
+    if result is None:
+        return
+
+    messages, message_history = result
+    print(f"\n{messages.content[0].text}")
+
+    run_chat_loop(claude_client, message_history)
 
 
 def main():
