@@ -19,7 +19,8 @@ ai-engineering/
 
 | Sprint                             | Focus                                                    | Status         |
 | ---------------------------------- | -------------------------------------------------------- | -------------- |
-| [Sprint 01](./sprint-01/README.md) | Python fundamentals · Prompt engineering · LLM API calls | 🟡 In progress |
+| [Sprint 01](./sprint_01/README.md) | Python fundamentals · Prompt engineering · LLM API calls | 🟢 Completed   |
+| [Sprint 02](./sprint_02/README.md) | Streaming · Structured outputs · Function/tool calling   | 🟡 In Progress |
 
 ## Stack
 
