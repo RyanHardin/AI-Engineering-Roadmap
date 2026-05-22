@@ -25,56 +25,62 @@ def call_claude(claude_client, message_history):
 
 
 def interview_chat(claude_client):
-    try:
-        raw_csv = read_csv(CSV_FILE_PATH)
-        message_history = [
-            {
-                "role": "user",
-                "content": f"""
+    raw_csv = read_csv(CSV_FILE_PATH)
+    message_history = [
+        {
+            "role": "user",
+            "content": f"""
             Give a brief summary of the provided report.       
             raw csv: {raw_csv}
         """,
-            }
-        ]
-
+        }
+    ]
+    try:
         messages = call_claude(claude_client, message_history)
-
-        if messages is None:
-            return
-
-        print(f"\n{messages.content[0].text}")
-
-        chat_open = True
-
-        while chat_open:
-            user_input = input("\nEnter your response (or 'quit' to exit): ")
-            user_message = {"role": "user", "content": user_input}
-
-            if user_input == "quit" or user_input == "exit":
-                chat_open = False
-                print("\nEnding session. Goodbye!")
-                continue
-
-            if user_input.strip() == "":
-                print("Please enter a valid message.")
-                continue
-
-            message_history.append(user_message)
-            new_message = call_claude(claude_client, message_history)
-
-            assistant_message = {
-                "role": "assistant",
-                "content": new_message.content[0].text,
-            }
-            message_history.append(assistant_message)
-
-            print(f"\n{assistant_message['content']}")
+    except anthropic.AuthenticationError:
+        print("Invalid API key")
+        return
     except anthropic.APIConnectionError:
-        print("The server could not be reached")
-    except anthropic.APIStatusError as e:
-        print(f"API Error {e.staus_code}: {e.message}")
-    except anthropic.RateLimitError:
-        print("Rate limit hit.")
+        print("The server could not be reached.")
+        return
+    except anthropic.APIStatusError as error:
+        print(f"API Error {error.status_code}: {error.message}")
+        return
+
+    print(f"\n{messages.content[0].text}")
+
+    while True:
+        user_input = input("\nEnter your response (or 'quit' to exit): ")
+
+        if user_input == "quit" or user_input == "exit":
+            print("\nEnding session. Goodbye!")
+            break
+
+        if user_input.strip() == "":
+            print("Please enter a valid message.")
+            continue
+
+        user_message = {"role": "user", "content": user_input}
+        message_history.append(user_message)
+
+        try:
+            new_message = call_claude(claude_client, message_history)
+        except anthropic.APIConnectionError:
+            print("The server could not be reached")
+            message_history.pop()
+            continue
+        except anthropic.RateLimitError:
+            print("Rate limit hit.")
+            message_history.pop()
+            continue
+
+        assistant_message = {
+            "role": "assistant",
+            "content": new_message.content[0].text,
+        }
+        message_history.append(assistant_message)
+
+        print(f"\n{assistant_message['content']}")
 
 
 def main():
@@ -82,13 +88,8 @@ def main():
         print("Please provide ANTHROPIC_API_KEY")
         return
 
-    try:
-        client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
-        interview_chat(client)
-    except anthropic.APIConnectionError:
-        print("The server could not be reached")
-    except anthropic.AuthenticationError:
-        print("Invalid API key.")
+    client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+    interview_chat(client)
 
 
 main()
