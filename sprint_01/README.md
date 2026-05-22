@@ -42,7 +42,7 @@ Loads the same interview CSV and opens a persistent multi-turn chat session in t
 
 ### `classifier.py`
 
-Sends the raw CSV to Claude and asks it to classify every row by adding three new labels: `category`, `severity`, and `software_opportunity`. Claude returns pure JSON, which is then parsed and written to `outputs/interviews_classified.csv`. This script introduced prompt engineering for structured output — specifically how to coerce Claude into returning machine-readable data with no markdown or explanation.
+Sends the raw CSV to Claude and asks it to classify every row by adding three new labels: `category`, `severity`, and `software_opportunity`. Claude returns pure JSON, which is then parsed and written to `outputs/interviews_classified.csv` (see Sprint 2 for the API-enforced version of this). This script introduced prompt engineering for structured output — specifically how to coerce Claude into returning machine-readable data with no markdown or explanation.
 
 ---
 
