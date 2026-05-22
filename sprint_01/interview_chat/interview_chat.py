@@ -48,6 +48,9 @@ def load_interview_data(claude_client):
     except anthropic.APIStatusError as error:
         print(f"API Error {error.status_code}: {error.message}")
         return
+    except anthropic.APIError as error:
+        print(f"API Error: {error.message}")
+        return
 
     return response, message_history
 
@@ -70,11 +73,17 @@ def run_chat_loop(claude_client, message_history):
         try:
             new_message = call_claude(claude_client, message_history)
         except anthropic.APIConnectionError:
-            print("The server could not be reached")
+            print(
+                "The server could not be reached. Please check your connection and try again."
+            )
             message_history.pop()
             continue
         except anthropic.RateLimitError:
-            print("Rate limit hit.")
+            print("Rate limit hit. Please wait and try again.")
+            message_history.pop()
+            continue
+        except anthropic.APIError as error:
+            print(f"API Error: {error.message}. Please wait and try again.")
             message_history.pop()
             continue
 
@@ -84,7 +93,7 @@ def run_chat_loop(claude_client, message_history):
         }
         message_history.append(assistant_message)
 
-        print(f"\n{assistant_message['content']}")
+        print(f"\n{assistant_message['content']}\n")
 
 
 def interview_chat(claude_client):
@@ -93,8 +102,8 @@ def interview_chat(claude_client):
     if result is None:
         return
 
-    messages, message_history = result
-    print(f"\n{messages.content[0].text}")
+    response, message_history = result
+    print(f"\n{response.content[0].text}")
 
     run_chat_loop(claude_client, message_history)
 
