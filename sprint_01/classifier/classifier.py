@@ -9,8 +9,8 @@ from anthropic import Anthropic
 load_dotenv()
 
 
-def read_csv(file_name):
-    file_path = os.path.join(os.path.dirname(__file__), file_name)
+def read_csv(relative_file_path):
+    file_path = os.path.join(os.path.dirname(__file__), relative_file_path)
 
     try:
         with open(file_path, mode="r") as file:
