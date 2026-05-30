@@ -1,0 +1,11 @@
+name,email,company,role,interview_status,pain_point,willing_to_pay,category,severity,software_opportunity
+John Martinez,john.martinez@solarpros.com,Solar Pros Inc,Operations Manager,scheduled,Manual report generation takes 3 hours per inspection,yes,report writing,high,Yes
+Sarah Chen,sarah.chen@skyviewdrone.co,SkyView Drone Services,Owner,completed,Writing inspection reports from scratch every time,yes,report writing,high,Yes
+Mike Thompson,mike.t@propertycare.com,Property Care Solutions,Field Supervisor,scheduled,No good way to track panel performance over time,maybe,performance tracking,medium,Yes
+Lisa Rodriguez,lisa.r@greenenergy.net,Green Energy Installers,Service Manager,completed,Customers always asking for detailed reports we don't provide,yes,client communication,high,Yes
+David Park,david.park@rooftech.io,RoofTech Inspections,Lead Inspector,not_contacted,,,unknown,low,No
+Amanda Foster,amanda@droneinspect.biz,Drone Inspect Co,CEO,completed,Inconsistent report quality across different inspectors,yes,report writing,high,Yes
+Chris Williams,cwilliams@solarfix.com,SolarFix Maintenance,Owner,scheduled,Spending too much time on admin instead of actual work,yes,admin/workflow,high,Yes
+Jennifer Lee,jlee@propertymgmt.org,Prime Property Management,Facilities Director,completed,Need better documentation for insurance claims,yes,documentation,high,Yes
+Robert Garcia,robert.garcia@contractorpro.com,Contractor Pro Services,Project Manager,not_contacted,,,unknown,low,No
+Emily White,ewhite@suninspect.net,Sun Inspect Solutions,Technical Lead,scheduled,Clients want before/after comparisons we can't easily provide,maybe,client communication,medium,Yes
